@@ -42,6 +42,7 @@ const TodoList = () => {
               className="w-full rounded-s-full px-5 text-gray-500 font-medium bg-[#f1ece6]"
               type="text"
               placeholder="Type something"
+              onKeyDown={e => handleKeyPress(e)}
             />
             <button
               onClick={() => handleAddTodo()}
