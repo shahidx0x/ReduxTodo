@@ -1,6 +1,6 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { createTodoSlice } from "../features/todo/createTodoSlice"
-import storage from "redux-persist/lib/storage" // Use localStorage by default
+import storage from "redux-persist/lib/storage"
 import { persistStore, persistReducer } from "redux-persist"
 
 const rootReducer = combineSlices(createTodoSlice)
@@ -11,7 +11,7 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
-export const makeStore = (preloadedState?: Partial<RootState>) => {
+export const makeStore = () => {
   const store = configureStore({
     reducer: persistedReducer,
   })
