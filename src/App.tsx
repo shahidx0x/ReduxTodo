@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./App.css"
+import TodoList from "./components/TodoList/TodoList"
 const App = () => {
   const [activeTab, setActiveTab] = useState(0)
   return (
@@ -20,6 +21,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <TodoList />
     </div>
   )
 }
