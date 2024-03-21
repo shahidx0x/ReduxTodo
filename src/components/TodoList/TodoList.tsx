@@ -53,9 +53,12 @@ const TodoList = () => {
             <ul>
               {state.length !== 0 ? (
                 state.map(e => (
-                  <>
-                    <TaskList key={e.id} task={e.task} id={e.id} />
-                  </>
+                  <TaskList
+                    key={e.id}
+                    task={e.task}
+                    id={e.id}
+                    isComplete={e.isComplete}
+                  />
                 ))
               ) : (
                 <li className="font-bold text-5xl text-gray-500 flex justify-center">

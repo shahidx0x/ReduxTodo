@@ -28,12 +28,15 @@ export const createTodoSlice = createSlice({
       return (state = [])
     },
     markAsCompleteTodo: (state, action) => {
-      let index = state.findIndex(e => e.id === action.payload.id)
+      const index = state.findIndex(e => e.id === action.payload.id)
       if (index !== -1) {
-        let toUpdate = { ...state[index] }
-        toUpdate.isComplete = true
-        return state.splice(index, 1, toUpdate)
+        const toUpdate = { ...state[index], isComplete: true }
+        return [...state.slice(0, index), toUpdate, ...state.slice(index + 1)]
       }
+      return state
+    },
+    clearMarkedTodo: state => {
+      state = state.filter(e => e.isComplete !== true)
       return state
     },
   },
