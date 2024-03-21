@@ -1,65 +1,25 @@
+import { useState } from "react"
 import "./App.css"
-
-import logo from "./logo.svg"
-
 const App = () => {
+  const [activeTab, setActiveTab] = useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
- 
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-   
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div>
+      <div className="bg-[#f3f3f3] flex justify-center w-screen">
+        <div className="flex">
+          <div
+            className={`w-80 p-5 flex justify-center cursor-pointer ${activeTab === 0 && "border-b-2 border-black"}`}
+            onClick={() => setActiveTab(0)}
           >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="font-bold text-xl text-gray-500">Personal</h2>
+          </div>
+          <div
+            className={`w-80 p-5 flex justify-center cursor-pointer ${activeTab === 1 && "border-b-2 border-black"}`}
+            onClick={() => setActiveTab(1)}
           >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://reselect.js.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Reselect
-          </a>
-        </span>
-      </header>
+            <h2 className="font-bold text-xl text-gray-500">Professional</h2>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
