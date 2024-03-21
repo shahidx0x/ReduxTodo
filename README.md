@@ -1,4 +1,4 @@
-![Redux Todo](https://i.ibb.co/dmJbGjs/Soft-Minimalist-Download-Multiple-Devices-Mockup.png)
+![Redux Todo](https://i.ibb.co/Gv7FC9g/Screenshot-2024-03-21-234540.png)
 
 # Redux Todo
 
