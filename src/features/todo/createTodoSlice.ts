@@ -50,5 +50,11 @@ export const createTodoSlice = createSlice({
   },
 })
 
-export const { createTodo, deleteTodo, markAsCompleteTodo, clearAllTodo } =
-  createTodoSlice.actions
+export const {
+  createTodo,
+  deleteTodo,
+  markAsCompleteTodo,
+  unMarkAsComplete,
+  clearAllTodo,
+  clearMarkedTodo,
+} = createTodoSlice.actions

@@ -4,6 +4,7 @@ import { useAppDispatch } from "../../app/hooks"
 import {
   deleteTodo,
   markAsCompleteTodo,
+  unMarkAsComplete,
 } from "../../features/todo/createTodoSlice"
 
 const TaskList = ({
@@ -24,9 +25,9 @@ const TaskList = ({
 
   useEffect(() => {
     if (checked) {
-      dispatch(markAsCompleteTodo({ id: id }))
+      dispatch(markAsCompleteTodo({ id }))
     } else {
-      console.log(checked)
+      dispatch(unMarkAsComplete({ id }))
     }
   }, [checked, dispatch, id])
 
@@ -37,7 +38,7 @@ const TaskList = ({
           onClick={() => setChecked(prev => !prev)}
           className={`w-8 h-8 flex justify-center items-center rounded-full border-2  ${isComplete || checked ? "border-[#d98326]" : "border-[#737373]"} cursor-pointer`}
         >
-          {isComplete || (checked && <FaCheck className="text-[#d98326]" />)}
+          {isComplete && <FaCheck className="text-[#d98326]" />}
         </div>
         <h1 className={`text-2xl  ${isComplete && "text-[#C2C2C2]"} relative`}>
           <p

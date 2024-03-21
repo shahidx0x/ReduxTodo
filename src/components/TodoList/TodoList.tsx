@@ -2,7 +2,10 @@ import { MdOutlineCleaningServices } from "react-icons/md"
 import TaskList from "./TaskList"
 import { useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { createTodo } from "../../features/todo/createTodoSlice"
+import {
+  clearMarkedTodo,
+  createTodo,
+} from "../../features/todo/createTodoSlice"
 
 const TodoList = () => {
   const [todo, setTodo] = useState<string>("")
@@ -68,7 +71,10 @@ const TodoList = () => {
             </ul>
             {state.length !== 0 && (
               <div className="flex justify-end pt-5">
-                <div className="flex items-center gap-2 font-bold text-[#d98326] cursor-pointer hover:text-gray-500">
+                <div
+                  onClick={() => dispatch(clearMarkedTodo())}
+                  className="flex items-center gap-2 font-bold text-[#d98326] cursor-pointer hover:text-gray-500"
+                >
                   <MdOutlineCleaningServices />
                   <p>Clear Completed</p>
                 </div>
