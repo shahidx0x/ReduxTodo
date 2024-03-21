@@ -1,6 +1,4 @@
-![GitHub Logo](https://i.ibb.co/dmJbGjs/Soft-Minimalist-Download-Multiple-Devices-Mockup.png)
-
-
+![Redux Todo](https://i.ibb.co/dmJbGjs/Soft-Minimalist-Download-Multiple-Devices-Mockup.png)
 
 # Redux Todo
 
