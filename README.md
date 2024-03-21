@@ -1,6 +1,5 @@
-![Redux Todo](https://i.ibb.co/Gv7FC9g/Screenshot-2024-03-21-234540.png)
-
 # Redux Todo
+![Redux Todo](https://i.ibb.co/Gv7FC9g/Screenshot-2024-03-21-234540.png)
 
 Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create Redux Todo App compatible with [Create React App](https://create-react-app.dev/) . Clone the repository and install the dependancy with npm install
 
