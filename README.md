@@ -20,6 +20,7 @@ npm install
 - Delete Todo
 - Remove All Todo
 - Remove Only Completed Todo
+- Persit data on refress the page
 
 ## Scripts
 
