@@ -22,7 +22,7 @@ const TaskList = ({
   const removeTodo = (id: number) => {
     dispatch(deleteTodo({ id: id }))
   }
-
+  
   useEffect(() => {
     if (checked) {
       dispatch(markAsCompleteTodo({ id }))
@@ -36,7 +36,7 @@ const TaskList = ({
       <div className="flex gap-2">
         <div
           onClick={() => setChecked(prev => !prev)}
-          className={`w-8 h-8 flex justify-center items-center rounded-full border-2  ${isComplete || checked ? "border-[#d98326]" : "border-[#737373]"} cursor-pointer`}
+          className={`w-8 h-8 flex justify-center items-center rounded-full border-2  ${isComplete ? "border-[#d98326]" : "border-[#737373]"} cursor-pointer`}
         >
           {isComplete && <FaCheck className="text-[#d98326]" />}
         </div>

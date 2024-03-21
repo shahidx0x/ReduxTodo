@@ -3,6 +3,7 @@ import TaskList from "./TaskList"
 import { useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import {
+  clearAllTodo,
   clearMarkedTodo,
   createTodo,
 } from "../../features/todo/createTodoSlice"
@@ -30,6 +31,7 @@ const TodoList = () => {
       handleAddTodo()
     }
   }
+
   return (
     <div className="flex justify-center items-center pt-5">
       <div className=" w-[720px] p-3">
@@ -37,7 +39,7 @@ const TodoList = () => {
           <div className="flex w-full">
             <input
               onChange={e => setTodo(e.target.value)}
-              className="w-full rounded-s-full p-3 bg-[#f1ece6]"
+              className="w-full rounded-s-full px-5 text-gray-500 font-medium bg-[#f1ece6]"
               type="text"
               placeholder="Type something"
             />
@@ -70,7 +72,14 @@ const TodoList = () => {
               )}
             </ul>
             {state.length !== 0 && (
-              <div className="flex justify-end pt-5">
+              <div className="flex justify-end gap-5 pt-5">
+                <div
+                  onClick={() => dispatch(clearAllTodo())}
+                  className="flex items-center gap-2 font-bold text-[#d9264db0] cursor-pointer hover:text-gray-500"
+                >
+                  <MdOutlineCleaningServices />
+                  <p>Clear all task</p>
+                </div>
                 <div
                   onClick={() => dispatch(clearMarkedTodo())}
                   className="flex items-center gap-2 font-bold text-[#d98326] cursor-pointer hover:text-gray-500"
